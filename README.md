@@ -1,4 +1,4 @@
 etcd_cli
 ========
 
-Ectd helper in Python
+etcd helper in Python
