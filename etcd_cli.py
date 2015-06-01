@@ -4,7 +4,7 @@ import requests, json, argparse
 
 ETCD_HOST='172.17.42.1'
 ETCD_PROTO='http://'
-ETCD_PORT=4001
+ETCD_PORT=2379
 ETCD_BASE_KEY_URI='/v2/keys'
 
 POST_TYPES = {
