@@ -1,8 +1,12 @@
 #!/usr/bin/python
 
-import requests, json, argparse
+import requests, json, argparse, re, subprocess
 
-ETCD_HOST='172.17.42.1'
+# Fetch docker host IP
+ps = subprocess.Popen(['ip', 'ro', 'get', '8.8.8.8',], stdout=subprocess.PIPE)
+ETCD_HOST = re.search('via ([0-9.]*) ', ps.stdout.readlines()[0]).groups()[0]
+
+#ETCD_HOST='172.17.42.1'
 ETCD_PROTO='http://'
 ETCD_PORT=2379
 ETCD_BASE_KEY_URI='/v2/keys'
